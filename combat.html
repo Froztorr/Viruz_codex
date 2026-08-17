@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Combat &amp; Care — MalwareZ Codex</title>
+<meta name="description" content="The seven combat stats, ailments, the speed-counter math, the Hack/Raid minigame, loyalty tiers, the Tamagotchi-style care system, and hard-earned tips.">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="book">📖</span><span>MALWAREZ CODEX<small>the VIRUZ compendium</small></span></div>
+    <nav class="nav-links">
+      <a href="index.html">Cover</a>
+      <a href="species.html">Attributes &amp; Species</a>
+      <a href="bestiary.html">AntiviruZ Bestiary</a>
+      <a href="world.html">World Maps</a>
+      <a href="systems.html">Gear &amp; Skills</a>
+      <a href="combat.html" class="on">Combat &amp; Care</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="pagehead">
+    <span class="eyebrow">Chapter 5</span>
+    <h1>Combat, Hacking &amp; Care</h1>
+    <p class="lede">Fights are fully automatic, one VIRUZ per side at a time — there are no attack buttons, specials fire on their own logic, and when your fighter falls you just pick who steps up next. This chapter covers the math behind that, the two-stage Hack/Raid minigame, and how to raise loyalty outside of battle.</p>
+  </div>
+
+  <section class="chapter" id="stats">
+    <h2 class="h">The seven stats</h2>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Stat</th><th>Meaning</th></tr>
+      <tr><td>⚔️ ATK</td><td>Attack power</td></tr>
+      <tr><td>🛡️ DEF</td><td>Damage reduction — ratio-based, see formula below</td></tr>
+      <tr><td>💥 CRIT</td><td>Critical hit chance %; a crit deals ×2</td></tr>
+      <tr><td>💨 EVA</td><td>Evasion chance % — a dodge takes 0 damage</td></tr>
+      <tr><td>⚡ SPD</td><td>Drives the speed counter (extra turns)</td></tr>
+      <tr><td>🔮 INT</td><td>Max MP — the fuel for special skills</td></tr>
+      <tr><td>❤️ VIT</td><td>Max HP</td></tr>
+    </table></div>
+
+    <h3 class="h3">Damage formula</h3>
+    <div class="tip"><b>dmg = ATK × power × (1 − DEF/(DEF+140))</b><br>Ratio-based mitigation — it can never floor to 1 damage the way a flat subtraction can, and it can never go negative either. A normal hit reads as roughly 13% of a health bar; mid-tier specials land 25–45%; ultimates hit 65–72%.</div>
+
+    <h3 class="h3">Speed counter (extra turns)</h3>
+    <p class="desc">Every turn, a unit accrues <span class="kbd">(mySPD − foeSPD) / 45</span> speed points (0 if the gap isn't in its favor — equal speed accrues nothing even when both are high). Once the counter reaches 1, that unit acts <b>twice</b> in the same turn and the counter resets.</p>
+
+    <h3 class="h3">Crit gauge</h3>
+    <p class="desc">Fills every time a unit takes its own turn: a flat <b>+0.16</b> plus <span class="kbd">CRIT stat / 260</span>. At 100% an ally becomes tappable to fire a guaranteed-crit bonus strike on demand; an enemy's gauge just auto-fires the instant it's full.</p>
+
+    <h3 class="h3">Level gap difficulty</h3>
+    <p class="desc">Fighting above your level costs you evasion and mitigation; fighting below grants it (capped at ±18 EVA / ±30% mitigation):</p>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Foe level vs. yours</th><th>Their miss rate against you</th><th>Hits to kill you</th></tr>
+      <tr><td>−10</td><td>0%</td><td>3</td></tr>
+      <tr><td>0 (even)</td><td>6%</td><td>5</td></tr>
+      <tr><td>+5</td><td>10%</td><td>8</td></tr>
+      <tr><td>+10</td><td>16%</td><td>11</td></tr>
+      <tr><td>+15</td><td>23%</td><td>17</td></tr>
+    </table></div>
+  </section>
+
+  <section class="chapter" id="ailments">
+    <h2 class="h">Ailments</h2>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Ailment</th><th>Effect</th></tr>
+      <tr><td>☠️ Poison</td><td class="wrap-cell"><b>Stacking</b> — 5 flat HP loss per stack per turn. Stacks add up across repeat casts and never expire on their own (until the fight ends or it's cleansed).</td></tr>
+      <tr><td>❄️ Freeze</td><td class="wrap-cell">Cannot act or use skills. Getting hit while frozen <b>shatters</b> it — the hit deals ×1.2 damage and the ailment ends immediately.</td></tr>
+      <tr><td>🔥 Frenzy</td><td class="wrap-cell"><b>Stacking</b> — per stack: ATK +12%, DEF −8%, SPD +8%. Never expires on its own; can be self-applied as a buff.</td></tr>
+      <tr><td>💗 Charmed</td><td class="wrap-cell">Attacks itself instead of the enemy; any buff or heal it casts lands on the enemy's side instead.</td></tr>
+      <tr><td>🦠 Corrupted</td><td class="wrap-cell">Generic multi-stat drain (ATK/DEF/SPD/EVA/CRIT, whichever the caster set) — the mutation-branch debuff and the Demon habit passive both use this shape.</td></tr>
+      <tr><td>🗿 Stoned</td><td class="wrap-cell">Hard stun. Unlike Freeze, taking damage never breaks it early and it grants no bonus damage — it just runs its full duration.</td></tr>
+      <tr><td>🛟 Last Stand</td><td class="wrap-cell">A self-buff token (from Failsafe Protocol) — the instant this unit's HP first dips below 40%, it's silently consumed and HP is restored to full. Once per fight.</td></tr>
+    </table></div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="chapter" id="hackraid">
+    <h2 class="h">🖥️ The Hack / Raid minigame</h2>
+    <p class="desc">Raiding another player's base is two stages.</p>
+
+    <h3 class="h3">Stage 1 — Password terminal</h3>
+    <p class="desc">A Fallout-style green screen: tech words are hidden in a field of junk characters. Clicking a word reveals its "likeness" to the real password — how many letters it shares with the answer in the exact same position. You get 4 attempts; running out locks you out of the raid.</p>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Target level</th><th>Word length</th><th>Word count</th><th>Attempts</th></tr>
+      <tr><td>&lt; 30</td><td>4 letters</td><td>8</td><td>4</td></tr>
+      <tr><td>30–59</td><td>5 letters</td><td>10</td><td>4</td></tr>
+      <tr><td>60+</td><td>6 letters</td><td>12</td><td>4</td></tr>
+    </table></div>
+    <div class="tip"><b>Tool:</b> a Ping_Finder (1,500 Bitz, bought at the Tech Shop) destroys 2 wrong candidates on the board mid-Probe — the answer to a late-game board down to a handful of equally plausible values.</div>
+
+    <h3 class="h3">Stage 2 — Steal menu</h3>
+    <p class="desc">Pick one enemy pet, then pick your loot. Every option shows a success %:</p>
+    <ul style="color:var(--ink-dim);font-size:13px">
+      <li><b>100%</b> → automatic win, no fight at all</li>
+      <li><b>below 100%</b> → the defender's stats are multiplied up to roughly <b>×1.9</b> at 5%, and you fight a single-pet raid battle</li>
+    </ul>
+    <p class="desc">Success % is driven by the loot's base value (pricier loot = lower %) and the level gap between you and the target (being higher-level than them makes it easier, shifted up to ±30 points), and it never drops to 0%. Losing a committed raid costs a flat <b>300 Bitz</b> penalty.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="chapter" id="loyalty">
+    <h2 class="h">❤️ Loyalty</h2>
+    <p class="desc">Every VIRUZ tracks a 0–100 loyalty score with four tiers. Crossing a threshold promotes it immediately.</p>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Tier</th><th>At</th><th>Stat multiplier</th><th>Perk</th></tr>
+      <tr><td>🤍 Stranger</td><td>0</td><td>×1.00</td><td>—</td></tr>
+      <tr><td>💛 Friendly</td><td>25</td><td>×1.10</td><td>DEF +8%</td></tr>
+      <tr><td>🧡 Trusted</td><td>55</td><td>×1.25</td><td>DEF +15%, SPD +10%</td></tr>
+      <tr><td>❤️ Loyal Buddy</td><td>85</td><td>×1.50</td><td>Unlocks a signature ultimate + DEF +20%, SPD +15%</td></tr>
+    </table></div>
+    <p class="desc">Loyal Buddy unlocks a named signature move by attribute, firing ~25% of the time in place of the normal skill roll: <b>Overclock Fang</b> (Red, pw118), <b>Phantom Rush</b> (Green, pw104), <b>Bastion Crush</b> (Yellow, pw112), <b>Radiant Cascade</b> (White, pw108).</p>
+    <div class="tip gold"><b>+1 loyalty per battle won</b> is deliberately slow — the Care screen is the fast path.</div>
+
+    <h3 class="h3">Care activities</h3>
+    <p class="desc">Every activity opens a short interactive minigame (backing out early costs nothing — nothing is spent until it's finished) and shares a <b>1-hour cooldown per pet, per activity</b>.</p>
+    <div class="grid wide">
+      <div class="card"><h4>🧼 Cleaning — free</h4><div class="body">Bathing minigame: scrub 4–6 dirt spots off the pet. +4 loyalty.</div></div>
+      <div class="card"><h4>🍪 Foods — consumed on use</h4><div class="body">Data Crumbs 80/+3 · Byte Burger 220/+7 · Golden Cache 600/+14 · Quantum Feast 1400/+24</div></div>
+      <div class="card"><h4>🧸 Toys — bought once, reusable</h4><div class="body">Packet Ball 400/+5 · Laser Pointer 1100/+10 · Logic Cube 2400/+16 · Mini Arcade 4800/+26 (each on its own cooldown)</div></div>
+    </div>
+
+    <h3 class="h3">Homemade cooking</h3>
+    <p class="desc">Every homemade recipe beats every precooked food — even the cheapest recipe already clears Quantum Feast's 24 loyalty. The catch: recipes need <b>Viral Meat</b>, which only drops from hunting monsters (35% per kill) and is never sold in a shop.</p>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Recipe</th><th>Needs</th><th>Loyalty</th></tr>
+      <tr><td>🌮 Meat Taco</td><td>1 veg, 1 bun, 1 meat</td><td>+25</td></tr>
+      <tr><td>🥪 Meat Sandwich</td><td>1 veg, 2 bun, 1 meat</td><td>+27</td></tr>
+      <tr><td>🍔 Meat Burger</td><td>1 veg, 2 bun, 2 meat</td><td>+30</td></tr>
+      <tr><td>🍛 Fried Rice</td><td>2 veg, 1 meat</td><td>+29</td></tr>
+      <tr><td>🍝 Spaghetti &amp; Meatballs</td><td>2 veg, 2 meat</td><td>+34</td></tr>
+      <tr><td>🍲 Hearty Stew</td><td>3 veg, 2 meat</td><td>+38 (max)</td></tr>
+    </table></div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="chapter" id="tips">
+    <h2 class="h">🎯 Battle-tested tips</h2>
+    <div class="grid wide">
+      <div class="card">
+        <h4>Stack a mono-attribute team</h4>
+        <div class="body">3-of-3 synergy is a flat +30% ATK/DEF/SPD — bigger than almost any coverage advantage a mixed team buys you.</div>
+      </div>
+      <div class="card">
+        <h4>Poison &amp; Frenzy never expire mid-fight</h4>
+        <div class="body">Both are stacking ailments that only clear at fight's end or on a Cleanse — reapplying them every time they're off cooldown snowballs hard in long fights, especially against Yellow tanks that would otherwise out-turtle you.</div>
+      </div>
+      <div class="card">
+        <h4>Green's double-hit compounds with on-hit effects</h4>
+        <div class="body">28% double-hit chance means Toxin Injector, Data Leech and poison-on-hit specials all get an extra roll almost every other turn.</div>
+      </div>
+      <div class="card">
+        <h4>Freeze is a trap against a Machine-type card</h4>
+        <div class="body">The Machine habit passive resists Freeze/Stoned outright — bring Corrupt or Charm effects against it instead.</div>
+      </div>
+      <div class="card">
+        <h4>Farm bosses where you're under-leveled</h4>
+        <div class="body">Region bosses are the only source of Malware Cores. Pick a zone where your team is a bit behind the level range — the fight is still winnable and the boss re-rolls its spawn zone often.</div>
+      </div>
+      <div class="card">
+        <h4>Read the raid odds before committing</h4>
+        <div class="body">A 100% steal option is a completely free win. Anything lower scales the defender up to ~×1.9 — only take that fight with a team that can actually eat the harder hit, since losing costs a flat 300 Bitz.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-nav">
+    <a href="systems.html">← Gear &amp; Skills</a>
+    <a href="index.html">↩ Back to cover</a>
+  </div>
+
+  <footer class="pagefoot">
+    <span>MalwareZ Codex — sourced from the <code>Viruz</code> game repository.</span>
+    <span>Chapter 5 of 5</span>
+  </footer>
+</div>
+
+</body>
+</html>
