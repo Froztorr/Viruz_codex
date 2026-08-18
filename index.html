@@ -3,106 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MalwareZ Codex — the VIRUZ compendium</title>
-<meta name="description" content="The full player's codex for MalwareZ: attributes, habit system, species &amp; evolutions, AntiviruZ bestiary, world maps, gear, skills and combat tips, pulled straight from the live Viruz repo.">
+<title>VIRUZ Field Desk — player codex</title>
+<meta name="description" content="A player-first field desk for MalwareZ: learn the phone, raise VIRUZ, explore virtual worlds, hack rival databases, and track what is live.">
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+:root{--desk:#07111d;--desk2:#0b1a2a;--glass:rgba(13,28,44,.82);--cyan:#69e7ff;--pink:#ff77d5;--lime:#b7f36b;--muted:#a7bdd0}
+body{background:radial-gradient(900px 560px at 75% 0%,rgba(70,204,255,.14),transparent 60%),radial-gradient(760px 680px at 5% 70%,rgba(255,87,194,.12),transparent 65%),var(--desk)}
+.pagehead.desk-head{border:0;padding:42px 0 10px;margin:0}.desk-head .eyebrow{color:var(--lime);border-color:rgba(183,243,107,.35);background:rgba(183,243,107,.08)}
+.desk-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:30px;align-items:center;padding:18px 0 40px}.desk-hero h1{font-size:clamp(34px,5.3vw,64px);line-height:1.03;margin:0 0 16px;background:linear-gradient(100deg,#e9f7ff 10%,var(--cyan) 52%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}.desk-hero .lede{font-size:17px;max-width:62ch}.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-weight:800}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}.hero-actions a{border:1px solid rgba(105,231,255,.45);background:rgba(105,231,255,.1);border-radius:10px;padding:10px 14px;color:#eafaff;font-weight:700;font-size:13px}.hero-actions a.secondary{border-color:rgba(255,119,213,.4);background:rgba(255,119,213,.08)}.hero-actions a:hover{text-decoration:none;transform:translateY(-1px)}
+.reporter-stage{position:relative;min-height:430px;display:grid;place-items:end center}.reporter-stage:before{content:'';position:absolute;width:310px;height:310px;border-radius:50%;background:radial-gradient(circle,rgba(105,231,255,.18),transparent 68%);filter:blur(4px)}.reporter-portrait{position:relative;z-index:1;height:clamp(370px,46vw,520px);width:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}.reporter-caption{position:absolute;right:2%;bottom:16px;z-index:2;max-width:220px;padding:11px 13px;border:1px solid rgba(105,231,255,.34);background:rgba(4,14,24,.86);border-radius:12px;font-size:12px;color:var(--muted);box-shadow:0 10px 26px rgba(0,0,0,.35)}.reporter-caption strong{display:block;color:#fff;margin-bottom:3px}.reporter-caption em{color:var(--pink);font-style:normal}
+.phone-panel{border:1px solid rgba(105,231,255,.3);background:linear-gradient(145deg,rgba(17,44,66,.92),rgba(11,19,33,.86));border-radius:16px;padding:17px;margin:8px 0 28px;box-shadow:0 16px 30px rgba(0,0,0,.24)}.phone-top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:10px}.phone-top b{color:#fff}.signal{font-size:11px;color:var(--lime);letter-spacing:.08em}.phone-panel p{margin:0;color:var(--muted);font-size:13px}.phone-panel code{color:var(--cyan);background:rgba(105,231,255,.08);padding:2px 5px;border-radius:4px}
+.status-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0 0}.status-card{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:12px;padding:12px}.status-card .status{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--lime);font-weight:800}.status-card h3{font-size:14px;margin:7px 0 4px}.status-card p{font-size:12px;color:var(--ink-dim);margin:0}
+.quote{border-left:3px solid var(--pink);padding:8px 0 8px 15px;color:#dcecff;font-size:16px;max-width:66ch;margin:14px 0 0}.quote small{display:block;color:var(--pink);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-top:7px}
+.player-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.player-card{display:block;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:16px;background:linear-gradient(160deg,rgba(27,44,69,.94),rgba(16,17,37,.9));min-height:150px;transition:.16s ease}.player-card:hover{transform:translateY(-2px);border-color:var(--cyan);text-decoration:none}.player-card .step{font-size:10px;color:var(--pink);letter-spacing:.14em;text-transform:uppercase;font-weight:800}.player-card h3{margin:7px 0;font-size:17px}.player-card p{margin:0;color:var(--ink-dim);font-size:13px}.player-card .where{display:inline-block;margin-top:13px;color:var(--cyan);font-size:11px;font-weight:700}
+@media(max-width:760px){.desk-hero{grid-template-columns:1fr;gap:8px}.reporter-stage{min-height:360px;order:-1}.reporter-portrait{height:380px}.reporter-caption{right:0;bottom:8px}.status-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.status-grid{grid-template-columns:1fr}.desk-hero{padding-top:8px}}
+</style>
 </head>
 <body>
-
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="brand"><span class="book">📖</span><span>MALWAREZ CODEX<small>the VIRUZ compendium</small></span></div>
-    <nav class="nav-links">
-      <a href="index.html" class="on">Cover</a>
-      <a href="species.html">Attributes &amp; Species</a>
-      <a href="bestiary.html">AntiviruZ Bestiary</a>
-      <a href="world.html">World Maps</a>
-      <a href="systems.html">Gear &amp; Skills</a>
-      <a href="combat.html">Combat &amp; Care</a>
-    </nav>
-  </div>
-</div>
-
+<div class="topbar"><div class="topbar-inner"><div class="brand"><span class="book">📱</span><span>VIRUZ FIELD DESK<small>player codex • live briefings</small></span></div><nav class="nav-links"><a href="index.html" class="on">Briefing</a><a href="species.html">Raise VIRUZ</a><a href="bestiary.html">Scan Enemies</a><a href="world.html">Worlds</a><a href="systems.html">Loadout</a><a href="combat.html">Combat &amp; Care</a></nav></div></div>
 <div class="wrap">
-  <div class="pagehead">
-    <span class="eyebrow">Unofficial Player's Codex</span>
-    <h1>MalwareZ — the VIRUZ Codex</h1>
-    <p class="lede">Everything about raising, evolving and battling with your VIRUZ in <b>MalwareZ</b> — a cyberpunk monster-raising game where you hatch VIRUZ, hack into systems, and raid other players. This codex is generated from the live game data in the <code>Viruz</code> repository, kept here in <code>Viruz_codex</code> so it can grow into a full illustrated reference without touching the game's own codebase.</p>
-  </div>
-
-  <section class="chapter">
-    <h2 class="h">Chapters</h2>
-    <div class="toc">
-      <a class="chapter-card" href="species.html">
-        <span class="num">Chapter 1</span>
-        <h3>⚔️ Attributes &amp; Species</h3>
-        <p>Red / Green / Yellow / White attributes, team synergy, the 6-colour × 18-type Habit system, and all 14 VIRUZ species with their full 3-stage evolution lines.</p>
-      </a>
-      <a class="chapter-card" href="bestiary.html">
-        <span class="num">Chapter 2</span>
-        <h3>🦠 AntiviruZ Bestiary</h3>
-        <p>Every wild AntiviruZ by region — Forest, Hell, Galaxy and the Tabletop Realm — plus the raid Security Guard tiers and the wandering region bosses.</p>
-      </a>
-      <a class="chapter-card" href="world.html">
-        <span class="num">Chapter 3</span>
-        <h3>🗺️ World Maps</h3>
-        <p>Verdant Realm, Infernal Realm, the Galaxy hub and its four sub-maps, and the Tabletop Realm — every zone, its level range and its monster pool.</p>
-      </a>
-      <a class="chapter-card" href="systems.html">
-        <span class="num">Chapter 4</span>
-        <h3>🧬 Gear, Skills &amp; Evolution</h3>
-        <p>Equipment slots and grades, Payload effects, crafting, Eggs and Items, the four attribute skill trees, and the True Form / stage-2 mutation evolution system.</p>
-      </a>
-      <a class="chapter-card" href="combat.html">
-        <span class="num">Chapter 5</span>
-        <h3>🎯 Combat, Hacking &amp; Care</h3>
-        <p>The seven combat stats, ailments, the speed-counter math, the Hack/Raid minigame, and the loyalty &amp; Tamagotchi-style care system — plus a page of hard-earned tips.</p>
-      </a>
+  <header class="pagehead desk-head"><span class="eyebrow">Field desk • issue 01</span></header>
+  <section class="desk-hero" aria-labelledby="desk-title">
+    <div>
+      <div class="kicker">A journalist's guide to the cybernetic frontier</div>
+      <h1 id="desk-title">Your phone is a doorway.</h1>
+      <p class="lede">Welcome to the <b>VIRUZ Field Desk</b> — the player's codex for <b>MalwareZ</b>. I follow the signal, interview the strange things behind it, and turn every dangerous screen into a readable briefing.</p>
+      <p class="quote">“If the phone can see a database, a virtual world, or a hostile program, it can turn that signal into an opportunity.”<small>— Nyx Vale, field journalist</small></p>
+      <div class="hero-actions"><a href="species.html">Start with your VIRUZ</a><a class="secondary" href="world.html">Open the world map</a></div>
     </div>
+    <div class="reporter-stage"><img class="reporter-portrait" src="assets/journalist.svg" alt="Nyx Vale, the VIRUZ Field Desk journalist"><div class="reporter-caption"><strong>Nyx Vale</strong><em>Independent signal reporter</em><br>Ask me where to go next.</div></div>
   </section>
 
-  <section class="chapter">
-    <h2 class="h">What is MalwareZ? <span class="tag">naming note</span></h2>
-    <p class="desc">The game is called <b>MALWAREZ</b>. The creatures you collect are <b>VIRUZ</b>, and the enemy security programs you fight are <b>AntiviruZ</b> — these are in-fiction terms used throughout the game and this codex. You play as a hacker: hatch VIRUZ from eggs, raise their loyalty, level them up, evolve them, equip them with virus-themed gear, then send them out to clear world zones, crack password terminals to raid other players' bases, and climb from the Verdant Realm all the way to the Tabletop Realm.</p>
-    <div class="tip"><b>Start here:</b> read <a href="species.html">Attributes &amp; Species</a> first — every other system (skill trees, habit cards, evolution) hangs off a VIRUZ's attribute and species.</div>
-  </section>
+  <section class="phone-panel" aria-label="Phone briefing"><div class="phone-top"><b>📡 PHONE STATUS // FIELD DESK ONLINE</b><span class="signal">● SIGNAL STABLE</span></div><p>This phone is your map, scanner, lab and raid console. It lets you <code>scan</code> hostile programs, <code>raise</code> a VIRUZ team, <code>open</code> virtual worlds and <code>probe</code> rival databases — all explained here for players, without the workshop notes.</p></section>
 
-  <section class="chapter">
-    <h2 class="h">Quick-start tips</h2>
-    <div class="grid wide">
-      <div class="card">
-        <h4>🎯 Build a synergy team</h4>
-        <div class="body">Run 3 VIRUZ that share an attribute: 2 matching gives <b>+15%</b> ATK/DEF/SPD, all 3 matching gives <b>+30%</b>. A mixed team gives up nothing you can't get back from raw stats — a mono team almost always wins straight fights.</div>
-      </div>
-      <div class="card">
-        <h4>❤️ Loyalty beats fighting</h4>
-        <div class="body">Winning battles only grants <b>+1 loyalty</b> per win. Feeding, cleaning and playing on the Care screen is <em>much</em> faster — a single Golden Cache snack is worth 14 wins. Loyal Buddy (85+) is a real power spike: ×1.5 stats and a signature ultimate.</div>
-      </div>
-      <div class="card">
-        <h4>🥩 Cook, don't just buy</h4>
-        <div class="body">Every homemade recipe out-loyalties every shop-bought food, but needs Viral Meat, which <em>only</em> drops from battle (35% per kill) — never sold. Hunt before you cook.</div>
-      </div>
-      <div class="card">
-        <h4>🧿 Save Malware Cores</h4>
-        <div class="body">Stage-2 evolution needs 1 Malware Core (region-boss-only drop) + 3 Code Parts. Farm bosses on the map you're currently under-levelled for — they carry the best odds relative to your team's level.</div>
-      </div>
-      <div class="card">
-        <h4>🎴 Fuse Habit Cards</h4>
-        <div class="body">Two identical-tier, identical colour+type cards fuse into one card a tier higher (green→blue→purple), each fusion adding a random +20–30% to its passive. Don't sell duplicates — fuse them.</div>
-      </div>
-      <div class="card">
-        <h4>🔑 Raid smart, not greedy</h4>
-        <div class="body">Every steal option in a raid shows its success %. 100% is a free win with no fight at all. Anything below that scales the defender's stats up to ~1.9× — read the odds before committing, since losing costs a flat 300 Bitz.</div>
-      </div>
-    </div>
-  </section>
+  <section class="chapter"><h2 class="h">What is live in the codex?</h2><div class="status-grid"><div class="status-card"><div class="status">Live now</div><h3>Explore worlds</h3><p>Zone levels, safe spots, waves, rewards and enemy pools.</p></div><div class="status-card"><div class="status">Live now</div><h3>Raise a team</h3><p>Attributes, species, habits, skills, loyalty and evolution.</p></div><div class="status-card"><div class="status">Live now</div><h3>Hack &amp; raid</h3><p>Password terminals, steal choices, risk and the cost of failure.</p></div><div class="status-card"><div class="status">Live now</div><h3>Build a loadout</h3><p>Gear, crafting, cards, potions and the Tech Lab path.</p></div></div></section>
 
-  <footer class="pagefoot">
-    <span>MalwareZ Codex — sourced from the <code>Viruz</code> game repository.</span>
-    <span>Compendium built for the community, not an official document.</span>
-  </footer>
+  <section class="chapter"><h2 class="h">Read the field notes in this order</h2><div class="player-grid"><a class="player-card" href="species.html"><span class="step">01 • meet your companion</span><h3>Raise VIRUZ</h3><p>Choose a team, understand attributes, socket a Habit card and follow each species' evolution line.</p><span class="where">Open the hatchery →</span></a><a class="player-card" href="world.html"><span class="step">02 • choose a signal</span><h3>Enter the worlds</h3><p>Start in the Verdant Realm, move through the Infernal Realm, then reach Galaxy and Tabletop territory.</p><span class="where">Open the map desk →</span></a><a class="player-card" href="bestiary.html"><span class="step">03 • know the threat</span><h3>Scan AntiviruZ</h3><p>Read enemy habits, regional threats, security guards and the bosses that protect rare materials.</p><span class="where">Open the scanner →</span></a><a class="player-card" href="systems.html"><span class="step">04 • tune the phone</span><h3>Loadout &amp; evolution</h3><p>Spend resources on gear, skills, cards and the Tech Lab — the choices that make a run safer.</p><span class="where">Open the lab report →</span></a><a class="player-card" href="combat.html"><span class="step">05 • stay alive</span><h3>Combat &amp; care</h3><p>Learn the automatic battle rhythm, ailments, raid odds, loyalty and the fastest ways to look after a VIRUZ.</p><span class="where">Open the survival desk →</span></a></div></section>
+
+  <section class="chapter"><h2 class="h">Nyx's first dispatch <span class="tag">field advice</span></h2><p class="desc">Your first advantage is not a rare drop — it is knowing what the phone is telling you. Keep a balanced supply of healing items, build around a team attribute when you can, and read the raid odds before you commit. A safe zone is not a detour: it is where a careful hacker resets, repairs and prepares the next signal.</p><div class="tip"><b>Quick start:</b> open <a href="species.html">Raise VIRUZ</a>, pick one attribute to build around, then use <a href="world.html">Worlds</a> to find the first zone where your team is ready.</div></section>
+  <footer class="pagefoot"><span>VIRUZ Field Desk — an unofficial player guide for MalwareZ.</span><span>Reported from the cybernetic frontier.</span></footer>
 </div>
-
 </body>
 </html>
