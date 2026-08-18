@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gear, Skills &amp; Evolution — MalwareZ Codex</title>
+<meta name="description" content="Equipment slots and grades, Payload effects, crafting, Eggs and Items, the four attribute skill trees, and the True Form / stage-2 mutation evolution system.">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="book">📖</span><span>MALWAREZ CODEX<small>the VIRUZ compendium</small></span></div>
+    <nav class="nav-links">
+      <a href="index.html">Cover</a>
+      <a href="species.html">Attributes &amp; Species</a>
+      <a href="bestiary.html">AntiviruZ Bestiary</a>
+      <a href="world.html">World Maps</a>
+      <a href="systems.html" class="on">Gear &amp; Skills</a>
+      <a href="combat.html">Combat &amp; Care</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="pagehead">
+    <span class="eyebrow">Chapter 4</span>
+    <h1>Gear, Skills &amp; Evolution</h1>
+    <p class="lede">Everything you spend Bitz, Dust and drops on: equipment slots and grades, the crafting ladder, consumables, the four fixed attribute skill trees, and the True Form / stage-2 mutation evolution path.</p>
+  </div>
+
+  <section class="chapter" id="equipment">
+    <h2 class="h">Equipment</h2>
+    <p class="desc">3 rollable slots per VIRUZ, named after real components of a computer virus, plus a 4th Habit slot for drop-only cards (see <a href="species.html#habit">Attributes &amp; Species → Habit system</a>). Any pet can equip anything — level requirement is the only gate, attribute is not.</p>
+    <div class="grid wide">
+      <div class="card"><h4>💣 Payload</h4><div class="sub">Bias: ATK, CRIT</div><div class="body">Never rolls stats — rolls exactly one special <b>effect</b> instead (below).</div></div>
+      <div class="card"><h4>🧬 Exploit</h4><div class="sub">Bias: SPD, CRIT, EVA</div><div class="body">Pure stat roll, 2–3 stats at once.</div></div>
+      <div class="card"><h4>🗝️ Rootkit</h4><div class="sub">Bias: DEF, VIT</div><div class="body">Pure stat roll, 2–3 stats at once.</div></div>
+      <div class="card"><h4>🎴 Habit</h4><div class="sub">Drop-only card</div><div class="body">Grants a Habit Color + Type — see Chapter 1.</div></div>
+    </div>
+
+    <h3 class="h3">Grade ladder</h3>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Grade</th><th>Stat multiplier</th><th>Dust yield</th><th>Relative drop odds</th></tr>
+      <tr><td>Script Kiddie</td><td>×1.0</td><td>2</td><td>100</td></tr>
+      <tr><td>Trojan</td><td>×1.4</td><td>5</td><td>55</td></tr>
+      <tr><td>Polymorphic</td><td>×1.9</td><td>12</td><td>25</td></tr>
+      <tr><td>Zero-Day</td><td>×2.5</td><td>26</td><td>9</td></tr>
+      <tr><td>A.P.T.</td><td>×3.3</td><td>55</td><td>2</td></tr>
+    </table></div>
+    <p class="desc">Equipment drops from a kill 32% of the time. Selling an item yields Bitz (scaled by grade and level requirement); disenchanting yields Dust (crafting currency) at the grade's fixed rate above.</p>
+
+    <h3 class="h3">Payload effects</h3>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Effect</th><th>What it does</th><th>Magnitude by grade (Script → A.P.T.)</th></tr>
+      <tr><td>🩸 Data Leech</td><td class="wrap-cell">Heals HP equal to a % of damage dealt on every hit</td><td>8% → 30%</td></tr>
+      <tr><td>🔌 Kill Reboot</td><td class="wrap-cell">Instantly refills MP when a hit kills the target</td><td>20% → 75%</td></tr>
+      <tr><td>⚔️ Overclock</td><td class="wrap-cell">The fight's very first attack always crits</td><td>flat</td></tr>
+      <tr><td>🌪️ Adaptive Strike</td><td class="wrap-cell">The fight's very first attack always double-hits</td><td>flat</td></tr>
+      <tr><td>☠️ Toxin Injector</td><td class="wrap-cell">Chance to poison the target on a landed hit</td><td>10% → 38%</td></tr>
+    </table></div>
+
+    <h3 class="h3">Crafting</h3>
+    <p class="desc">Spend Dust for better grade <em>odds</em>, not a guaranteed tier — slot, stats and level requirement still roll randomly on top.</p>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Recipe</th><th>Cost</th><th>Script</th><th>Trojan</th><th>Polymorphic</th><th>Zero-Day</th><th>A.P.T.</th></tr>
+      <tr><td>🔧 Quick Craft</td><td>10 Dust</td><td>70%</td><td>25%</td><td>5%</td><td>0%</td><td>0%</td></tr>
+      <tr><td>⚙️ Standard Craft</td><td>30 Dust</td><td>35%</td><td>40%</td><td>20%</td><td>5%</td><td>0%</td></tr>
+      <tr><td>🛠️ Deep Craft</td><td>80 Dust</td><td>10%</td><td>25%</td><td>35%</td><td>25%</td><td>5%</td></tr>
+    </table></div>
+
+    <h3 class="h3">Habit card fusion</h3>
+    <p class="desc">Every Habit card drops as <b>Common (green)</b> regardless of the enemy it fell from. The only way up the ladder is fusing two cards of the <em>same tier and same color+type</em> into one card a tier higher:</p>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Fusion</th><th>Result tier</th><th>Power gain</th></tr>
+      <tr><td>🟢 Common × 2</td><td>🔵 Rare</td><td>random +20% to +30%</td></tr>
+      <tr><td>🔵 Rare × 2</td><td>🟣 Most Rare</td><td>random +20% to +30% again</td></tr>
+    </table></div>
+    <div class="tip"><b>The gamble:</b> a fused card inherits its Color + Type from <em>one</em> of the two ingredient cards at random — fusing a card you like with one you don't might not keep the one you wanted.</div>
+  </section>
+
+  <section class="chapter" id="items">
+    <h2 class="h">Eggs, Items &amp; Consumables</h2>
+
+    <h3 class="h3">Eggs</h3>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Egg</th><th>Cost</th><th>Odds</th></tr>
+      <tr><td>🥚 Normal Egg</td><td>500</td><td>100% Normal</td></tr>
+      <tr><td>🔵 Rare Egg</td><td>1,500</td><td>70% Normal · 30% Rare</td></tr>
+      <tr><td>🟣 Epic Egg</td><td>4,000</td><td>50% Normal · 35% Rare · 15% Epic</td></tr>
+    </table></div>
+
+    <h3 class="h3">Shop items</h3>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Item</th><th>Cost</th><th>Effect</th></tr>
+      <tr><td>💊 HP Patch</td><td>200</td><td>Heal 30% HP (usable mid-battle)</td></tr>
+      <tr><td>💉 HP Core</td><td>500</td><td>Heal 80% HP (usable mid-battle)</td></tr>
+      <tr><td>🧬 Team Repair</td><td>900</td><td>Heal 60% HP, whole team (usable mid-battle)</td></tr>
+      <tr><td>⚡ EXP Booster</td><td>800</td><td>+500 EXP</td></tr>
+      <tr><td>💎 Evo Stone</td><td>3,000</td><td>Grants 1 Malware Core (a Bitz shortcut into the same Tech Lab evolution gate everyone else uses)</td></tr>
+      <tr><td>📡 Ping_Finder</td><td>1,500</td><td>Destroys 2 wrong candidates on the hack terminal board mid-Probe</td></tr>
+      <tr><td>✨ Revive Potion</td><td>5,000</td><td>Instantly revives a Down VIRUZ from the bag (does <em>not</em> fix Error state)</td></tr>
+    </table></div>
+
+    <h3 class="h3">Safe-spot potions (combat healing)</h3>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Potion</th><th>Cost</th><th>Heal</th></tr>
+      <tr><td>🧪 Small Potion</td><td>120</td><td>35% HP</td></tr>
+      <tr><td>⚗️ Large Potion</td><td>320</td><td>70% HP</td></tr>
+      <tr><td>🍶 Full Elixir</td><td>700</td><td>100% HP</td></tr>
+    </table></div>
+
+    <h3 class="h3">Battle throwables</h3>
+    <p class="desc">A press-hold-drag radial wheel of up to 5 slotted items — flick one at either side of the field; whichever unit it lands on gets the effect (heal your own ally, or curse the enemy). Shares a 10s cooldown per item id.</p>
+    <div class="grid tight">
+      <div class="card"><h4>💧 MP Potion</h4><div class="body">180 Bitz — restore 50% MP</div></div>
+      <div class="card"><h4>🥤 Speed Draught</h4><div class="body">260 Bitz — SPD +40% for the fight</div></div>
+      <div class="card"><h4>🍸 Crit Elixir</h4><div class="body">280 Bitz — CRIT +50% for the fight</div></div>
+      <div class="card"><h4>✨ Cleanse Tonic</h4><div class="body">220 Bitz — clears all negative ailments</div></div>
+      <div class="card"><h4>❄️ Freeze Curse</h4><div class="body">240 Bitz — Freeze target 5 turns</div></div>
+      <div class="card"><h4>🗿 Stone Curse</h4><div class="body">240 Bitz — Stoned target 5 turns</div></div>
+      <div class="card"><h4>💗 Charm Curse</h4><div class="body">260 Bitz — Charm target 5 turns</div></div>
+    </div>
+
+    <h3 class="h3">Base defense bots</h3>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Bot</th><th>Cost</th><th>ATK</th><th>DEF</th><th>SPD</th><th>HP</th></tr>
+      <tr><td>🤖 Sentry Bot</td><td>1,200</td><td>14</td><td>16</td><td>10</td><td>140</td></tr>
+      <tr><td>🛡️ Warden Bot</td><td>3,000</td><td>22</td><td>26</td><td>12</td><td>230</td></tr>
+      <tr><td>🏰 Fortress Bot</td><td>7,500</td><td>34</td><td>40</td><td>14</td><td>380</td></tr>
+    </table></div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="chapter" id="skilltrees">
+    <h2 class="h">Skill trees</h2>
+    <p class="desc">One fixed tree per attribute, 16–17 nodes drawn as connected circles. Every VIRUZ earns <b>1 growth point per level</b> to spend on either a <b>stat node</b> (+n to a stat, up to 5 ranks) or a <b>skill node</b> (unlocks an active special) — a node's parent(s) must be maxed first. Rarer pets unlock a bonus tier at the deep nodes: +0/+1/+2/+3/+4 for Normal/Rare/Epic/Legendary/Mythic.</p>
+
+    <h3 class="h3">⚔️ Red — Inferno Path</h3>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Lv</th><th>Special</th><th>Effect</th></tr>
+      <tr><td>5</td><td>Ember Slash</td><td>×1.4 single hit</td></tr>
+      <tr><td>8</td><td>Twin Fang</td><td>×0.9, 2 hits</td></tr>
+      <tr><td>12</td><td>Cinder Touch</td><td>×1.1 + 3 stacks Poison</td></tr>
+      <tr><td>16</td><td>Blood Rage</td><td>self-buff: 3 stacks Frenzy</td></tr>
+      <tr><td>20</td><td>Kernel Pierce</td><td>×1.8, ignores 50% DEF</td></tr>
+      <tr><td>24</td><td>Triple Fang</td><td>×0.85, 3 hits</td></tr>
+      <tr><td>30</td><td>Meteor Byte</td><td>×2.4 single hit</td></tr>
+      <tr><td>36</td><td>Phoenix Dance</td><td>×2.0, 2 hits</td></tr>
+      <tr><td>45</td><td>Ragnarok Core</td><td>×3.2, ignores 35% DEF</td></tr>
+    </table></div>
+
+    <h3 class="h3">🌪️ Green — Gale Path</h3>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Lv</th><th>Special</th><th>Effect</th></tr>
+      <tr><td>5</td><td>Static Dash</td><td>×1.3 single hit</td></tr>
+      <tr><td>8</td><td>Gust Cutter</td><td>×0.8, 2 hits</td></tr>
+      <tr><td>12</td><td>Blur Step</td><td>self-buff: 2 stacks Frenzy</td></tr>
+      <tr><td>16</td><td>Venom Spray</td><td>×1.0 + 4 stacks Poison</td></tr>
+      <tr><td>20</td><td>Wind Flurry</td><td>×0.75, 3 hits</td></tr>
+      <tr><td>24</td><td>Cyclone Rip</td><td>×0.8, 4 hits</td></tr>
+      <tr><td>30</td><td>Siren Pulse</td><td>Charm the enemy 2 turns</td></tr>
+      <tr><td>38</td><td>Tempest Storm</td><td>×0.9, 5 hits</td></tr>
+    </table></div>
+
+    <h3 class="h3">🛡️ Yellow — Bastion Path</h3>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Lv</th><th>Special</th><th>Effect</th></tr>
+      <tr><td>5</td><td>Bulwark Bash</td><td>×1.35 single hit</td></tr>
+      <tr><td>8</td><td>Iron Guard</td><td>self-shield: −35% damage, 3 turns</td></tr>
+      <tr><td>12</td><td>Frost Lock</td><td>×0.9 + Freeze 1 turn</td></tr>
+      <tr><td>16</td><td>Fault Quake</td><td>×1.7 single hit</td></tr>
+      <tr><td>20</td><td>Fortress Mode</td><td>self-shield: −55% damage, 3 turns</td></tr>
+      <tr><td>26</td><td>Glacier Prison</td><td>×1.2 + Freeze 2 turns</td></tr>
+      <tr><td>40</td><td>Bastion Crush</td><td>×2.6, ignores 30% DEF</td></tr>
+      <tr><td>50</td><td>Petrify Command</td><td>Stoned 2 turns (does not shatter early)</td></tr>
+    </table></div>
+
+    <h3 class="h3">➕ White — Radiance Path</h3>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Lv</th><th>Special</th><th>Effect</th></tr>
+      <tr><td>5</td><td>Patch Mend</td><td>Heal self 25% HP</td></tr>
+      <tr><td>8</td><td>Purge Protocol</td><td>Cleanse own ailments</td></tr>
+      <tr><td>12</td><td>Aegis Ward</td><td>self-shield: −30% damage, 3 turns</td></tr>
+      <tr><td>16</td><td>Data Bless</td><td>Team ATK/DEF +20%, 4 turns</td></tr>
+      <tr><td>20</td><td>Radiant Cascade</td><td>Heal team 35% HP</td></tr>
+      <tr><td>24</td><td>Judgment Ray</td><td>×1.9 single hit</td></tr>
+      <tr><td>34</td><td>System Restore</td><td>Revive a fallen ally at 50% HP</td></tr>
+      <tr><td>40</td><td>Sanctuary</td><td>Heal team 50% + team DEF +30%, 3 turns</td></tr>
+      <tr><td>50</td><td>Failsafe Protocol</td><td>Arms a one-shot: first time this unit dips below 40% HP, heal to full</td></tr>
+    </table></div>
+  </section>
+
+  <section class="chapter" id="evolution">
+    <h2 class="h">Evolution — True Form &amp; stage-2 mutations</h2>
+    <p class="desc">Evolution runs across three art tiers for the 14 species with real art (see <a href="species.html#roster">Attributes &amp; Species</a>):</p>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Stage</th><th>Name</th><th>Art</th><th>How to get it</th></tr>
+      <tr><td>0</td><td>Base Form</td><td>Still image, per-attribute</td><td>Starting form for every hatch</td></tr>
+      <tr><td>1</td><td>True Form</td><td>Animated, same silhouette</td><td><b>Free</b> at the Tech Lab once the pet hits <b>Level 30</b> — no loyalty, no materials. It's the only evolution a Normal-rarity pet (max level 30) will ever reach. A ready pet's sprite glows orange.</td></tr>
+      <tr><td>2</td><td>Evolved Form</td><td>Animated, one of 4 mutation skins</td><td>Tech Lab: spend <b>1 Malware Core</b> + <b>3 Code Parts</b> (below)</td></tr>
+    </table></div>
+
+    <h3 class="h3">Stage-2 mutation roll</h3>
+    <p class="desc">Reaching stage 2 rolls one of four universal mutation branches — each is a cosmetic skin <em>and</em> a second, smaller skill tree (8 nodes, Lv50–75) layered on top of the pet's attribute tree.</p>
+    <div class="grid wide">
+      <div class="card"><h4>🔷 Overclock</h4><div class="body">Speed, short-circuit and freeze effects. Lv55 Clock Surge, Lv60 System Lockup, Lv68 Short Circuit, Lv75 Clock Singularity.</div></div>
+      <div class="card"><h4>🟤 Bulwark</h4><div class="body">Heavy hitting and endurance. Lv55 Bulwark Slam, Lv60 Brace Protocol, Lv68 Juggernaut Charge, Lv75 Unbreakable Core.</div></div>
+      <div class="card"><h4>🟣 Phantom</h4><div class="body">Evasion and ambush. Lv55 Phantom Veil, Lv60 Shadowstep, Lv68 Mirage Flicker, Lv75 Voidwalk.</div></div>
+      <div class="card"><h4>🟢 Corrupted</h4><div class="body">Enemy debuffs. Lv55 Data Decay, Lv60 Corrupt Strike, Lv68 Plague Protocol, Lv75 Oblivion Protocol.</div></div>
+    </div>
+
+    <h3 class="h3">Code Parts &amp; drop odds</h3>
+    <p class="desc">Code Parts drop per kill, chance scaling linearly from <b>5% at Lv1</b> up to <b>50% at Lv50+</b> (region bosses roll separately — see <a href="bestiary.html#bosses">AntiviruZ Bestiary → Region bosses</a>). Each part is typed to one of the four mutations; slotting parts biases which mutation you roll:</p>
+    <div class="tip gold"><b>Formula:</b> each Code Part committed to a mutation adds a flat <b>+30 percentage points</b> to that mutation's odds. Whatever's left over splits evenly across any mutation that got zero parts. Three parts of the same type therefore guarantees that mutation (90%, plus an even split of the remaining 10% only if some type got none) — mixing parts keeps the roll closer to even.</div>
+
+    <h3 class="h3">Synchronize (pet fusion)</h3>
+    <p class="desc">Sacrifice 2 fully-leveled pets of the <em>same rarity</em> to fuse into 1 new pet at the <em>next</em> rarity tier — a shortcut past the RNG of hatching a rare egg, at the cost of two already-invested pets. A small permanent stat bonus (10–15% to one stat) is rolled once and stamped onto the result, on top of everything rarity/level/gear already grant.</p>
+  </section>
+
+  <div class="section-nav">
+    <a href="world.html">← World Maps</a>
+    <a href="combat.html">Next: Combat &amp; Care →</a>
+    <a href="index.html">↩ Back to cover</a>
+  </div>
+
+  <footer class="pagefoot">
+    <span>MalwareZ Codex — sourced from the <code>Viruz</code> game repository.</span>
+    <span>Chapter 4 of 5</span>
+  </footer>
+</div>
+
+</body>
+</html>

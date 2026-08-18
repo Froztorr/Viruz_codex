@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attributes &amp; Species — MalwareZ Codex</title>
+<meta name="description" content="Attributes, team synergy, the Habit color/type passive system, rarity ladder, and all 14 VIRUZ species with their full evolution chains.">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="book">📖</span><span>MALWAREZ CODEX<small>the VIRUZ compendium</small></span></div>
+    <nav class="nav-links">
+      <a href="index.html">Cover</a>
+      <a href="species.html" class="on">Attributes &amp; Species</a>
+      <a href="bestiary.html">AntiviruZ Bestiary</a>
+      <a href="world.html">World Maps</a>
+      <a href="systems.html">Gear &amp; Skills</a>
+      <a href="combat.html">Combat &amp; Care</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="pagehead">
+    <span class="eyebrow">Chapter 1</span>
+    <h1>Attributes &amp; Species</h1>
+    <p class="lede">Every VIRUZ rolls one of four attributes at hatch, plus an optional Habit color/type from an equipped card. Species determines base stats, skills and the evolution line; attribute determines the stat spread and team synergy.</p>
+  </div>
+
+  <section class="chapter" id="attributes">
+    <h2 class="h">Attributes</h2>
+    <p class="desc">Attributes are rolled randomly when a VIRUZ hatches (a species can pin one with <span class="kbd">fixedAttr</span>). They set the base stat multipliers below — colour is separate from creature identity, so a species keeps its own art regardless of which attribute it rolls.</p>
+    <div class="grid wide">
+      <div class="card"><h4>⚔️ Red</h4><div class="sub">High ATK, low DEF</div><div class="body">ATK ×1.35 · DEF ×0.75 · SPD ×1.00 · HP ×0.95</div></div>
+      <div class="card"><h4>🌪️ Green</h4><div class="sub">Very fast, hits twice often</div><div class="body">ATK ×1.00 · DEF ×0.75 · SPD ×1.40 · HP ×0.90 · <b>28%</b> chance to strike twice per attack</div></div>
+      <div class="card"><h4>🛡️ Yellow</h4><div class="sub">High DEF and HP, slow</div><div class="body">ATK ×0.85 · DEF ×1.45 · SPD ×0.70 · HP ×1.25</div></div>
+      <div class="card"><h4>➕ White</h4><div class="sub">Support — buffs &amp; healing</div><div class="body">ATK ×0.70 · DEF ×0.90 · SPD ×0.90 · HP ×1.05 · rolls one support trait at hatch: <b>Aura</b> (flat team buff), <b>Regen</b> (periodic team heal), or <b>Harmonic</b> (half of both)</div></div>
+    </div>
+
+    <h3 class="h3">Team synergy</h3>
+    <p class="desc">A team of 3 counts its most common attribute:</p>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Matching count</th><th>Bonus</th></tr>
+      <tr><td>2 of 3 share an attribute</td><td>×1.15 to ATK / DEF / SPD</td></tr>
+      <tr><td>3 of 3 share an attribute</td><td>×1.30 to ATK / DEF / SPD</td></tr>
+    </table></div>
+    <div class="tip"><b>Tip:</b> a full mono-attribute team is almost always the strongest raw build — the +30% synergy usually outweighs whatever coverage a mixed team would have bought you.</div>
+  </section>
+
+  <section class="chapter" id="habit">
+    <h2 class="h">Habit system <span class="tag">habit cards</span></h2>
+    <p class="desc">Every wild AntiviruZ has a fixed Habit <b>Color</b> and <b>Type</b> — a second, independent layer on top of attributes. Killing one has a low chance (5% per kill) to drop a card named after it. Socketing that card into a VIRUZ's 4th equipment slot (Habit) grants <em>both</em> the color advantage and the type's unique passive — see <a href="systems.html#equipment">Gear &amp; Skills</a> for the equip slot and the card fusion ladder (green → blue → purple).</p>
+
+    <h3 class="h3">Habit colors (6)</h3>
+    <p class="desc">A 4-way cycle (Green ▸ Red ▸ Yellow ▸ Blue ▸ Green, each step +20% damage) plus a separate Dark/White pair: Dark beats every other color +10% except White, which beats Dark +20% and is neutral to the four-cycle colors.</p>
+    <div class="grid tight">
+      <div class="card"><h4>🌿 Green</h4><div class="body">Beats <b>Red</b> +20%</div></div>
+      <div class="card"><h4>🔥 Red</h4><div class="body">Beats <b>Yellow</b> +20%</div></div>
+      <div class="card"><h4>🌍 Yellow</h4><div class="body">Beats <b>Blue</b> +20%</div></div>
+      <div class="card"><h4>💧 Blue</h4><div class="body">Beats <b>Green</b> +20%</div></div>
+      <div class="card"><h4>⚪ White</h4><div class="body">Beats <b>Dark</b> +20% — neutral to all others</div></div>
+      <div class="card"><h4>🌑 Dark</h4><div class="body">Beats every color +10% (except White)</div></div>
+    </div>
+
+    <h3 class="h3">Habit types (18) — passive when socketed</h3>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Type</th><th>Passive</th></tr>
+      <tr><td>🐾 Beast</td><td class="wrap-cell">ATK/SPD +10% when fighting another Beast or Magical Beast</td></tr>
+      <tr><td>🐾✨ Magical Beast</td><td class="wrap-cell">ATK/SPD +18% and 15% armor penetration when fighting another Beast/Magical Beast</td></tr>
+      <tr><td>🪲 Insect</td><td class="wrap-cell">Every 5th attack is a guaranteed critical hit</td></tr>
+      <tr><td>🐟 Fish</td><td class="wrap-cell">EVA +12% while HP is above 50%</td></tr>
+      <tr><td>⭐ Myth</td><td class="wrap-cell">Highest stat (ATK/DEF/SPD) +15%</td></tr>
+      <tr><td>👺 Goblin</td><td class="wrap-cell">Guaranteed critical hit when the enemy is below 50% HP</td></tr>
+      <tr><td>😈 Demon</td><td class="wrap-cell">Every attack has a 15% chance to inflict Corrupted on the enemy</td></tr>
+      <tr><td>🧛 Vampire</td><td class="wrap-cell">Heals 10% of damage dealt as HP</td></tr>
+      <tr><td>💎 Elemental</td><td class="wrap-cell">DEF +15% while HP is above 75%</td></tr>
+      <tr><td>🧍 Humanoid</td><td class="wrap-cell">All stats +6%, always</td></tr>
+      <tr><td>💀 Undead</td><td class="wrap-cell">Survives one otherwise-lethal hit at 1 HP, once per fight</td></tr>
+      <tr><td>🌱 Plants</td><td class="wrap-cell">Heals 5% HP at the end of any turn it wasn't attacked</td></tr>
+      <tr><td>🍄 Fungi</td><td class="wrap-cell">Every attack has a 12% chance to inflict 1 stack of Poison</td></tr>
+      <tr><td>⚙️ Machine</td><td class="wrap-cell">Resists Freeze/Stoned, but takes +15% damage while Corrupted</td></tr>
+      <tr><td>👻 Conjuration</td><td class="wrap-cell">20% chance to take zero damage from an attack (illusion)</td></tr>
+      <tr><td>👁️ Aberration</td><td class="wrap-cell">EVA/CRIT +12%, but DEF -10%</td></tr>
+      <tr><td>🐉 Dragon</td><td class="wrap-cell">ATK +15% while HP is above 50%, ATK -15% once below</td></tr>
+      <tr><td>🧚 Fey</td><td class="wrap-cell">15% chance to Charm an attacker back when hit</td></tr>
+    </table></div>
+  </section>
+
+  <section class="chapter" id="rarity">
+    <h2 class="h">Rarity ladder</h2>
+    <div class="tblwrap"><table class="data">
+      <tr><th>Rarity</th><th>Stat points/level</th><th>Max level</th></tr>
+      <tr><td><span class="pill">Normal</span></td><td>×1</td><td>30</td></tr>
+      <tr><td><span class="pill cyan">Rare</span></td><td>×2</td><td>50</td></tr>
+      <tr><td><span class="pill magenta">Epic</span></td><td>×3</td><td>70</td></tr>
+      <tr><td><span class="pill gold">Legendary</span></td><td>×4</td><td>90</td></tr>
+      <tr><td><span class="pill" style="color:#ff5470;border-color:rgba(255,84,112,.4)">Mythic</span></td><td>×5</td><td>120</td></tr>
+    </table></div>
+    <p class="desc">A species' <span class="kbd">rarities</span> list is the pool it can hatch into (e.g. BloByte can only be Normal/Rare/Epic; GlitchImp can reach all the way to Mythic).</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="chapter" id="roster">
+    <h2 class="h">Species roster <span class="tag">14 species</span></h2>
+    <p class="desc">Every species has a base attack, a Lv3 special, and a two-step evolution line with its own name, stat multiplier, level gate and a stronger unique special. This naming/skill ladder is layered under the universal <a href="systems.html#evolution">True Form / stage-2 mutation</a> system — reaching the level gate below unlocks the named skill regardless of which mutation (Overclock/Bulwark/Phantom/Corrupted) the pet eventually rolls.</p>
+
+    <div class="grid wide" id="species-grid">
+
+      <div class="card">
+        <img class="art" src="assets/species/blobyte.png" alt="BloByte art">
+        <h4>BloByte <span class="pill">Normal–Epic</span></h4>
+        <div class="sub">ATK 20 · DEF 9 · SPD 11 · HP 70</div>
+        <div class="body"><b>Goo Packet</b> (basic) · <b>Split Fork</b> pw58 @Lv3 — splits its body to strike x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Prime</b> (×1.5, Lv20) — Mass Overflow x1.8 <span class="arrow">▸</span> <b>Omega</b> (×2.0, Lv50) — Total Corrupt x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/inkarm.png" alt="InkArm art">
+        <h4>InkArm <span class="pill">Normal–Legendary</span></h4>
+        <div class="sub">ATK 22 · DEF 10 · SPD 13 · HP 66</div>
+        <div class="body"><b>Ink Flood</b> (basic) · <b>Eight Grip</b> pw60 @Lv3 — eight-arm grapple x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Deep</b> (×1.5, Lv20) — Abyss Pull x1.8 <span class="arrow">▸</span> <b>Kraken</b> (×2.0, Lv50) — Black Tide x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/nulworm.png" alt="NulWorm art">
+        <h4>NulWorm <span class="pill">Normal–Epic</span></h4>
+        <div class="sub">ATK 24 · DEF 7 · SPD 15 · HP 58</div>
+        <div class="body"><b>Buffer Bite</b> (basic) · <b>Chain Crawl</b> pw62 @Lv3 — chain crawl x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Coil</b> (×1.5, Lv20) — Stack Smash x1.8 <span class="arrow">▸</span> <b>Hydra</b> (×2.0, Lv50) — Root Access x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/clampr.png" alt="Clampr art">
+        <h4>Clampr <span class="pill">Normal–Epic</span></h4>
+        <div class="sub">ATK 19 · DEF 16 · SPD 8 · HP 82</div>
+        <div class="body"><b>Pincer Cut</b> (basic) · <b>Shell Guard</b> pw56 @Lv3 — raises shell armor x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Bulwark</b> (×1.5, Lv20) — Iron Claw x1.8 <span class="arrow">▸</span> <b>Fortress</b> (×2.0, Lv50) — Total Lock x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/hopbit.png" alt="HopBit art">
+        <h4>HopBit <span class="pill">Normal–Epic</span></h4>
+        <div class="sub">ATK 21 · DEF 9 · SPD 18 · HP 62</div>
+        <div class="body"><b>Quick Ping</b> (basic) · <b>Double Hop</b> pw56 @Lv3 — double hop x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Dasher</b> (×1.5, Lv20) — Blink Rush x1.8 <span class="arrow">▸</span> <b>Phantom</b> (×2.0, Lv50) — Ghost Step x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/jetsquid.png" alt="JetSquid art">
+        <h4>JetSquid <span class="pill cyan">Rare–Legendary</span></h4>
+        <div class="sub">ATK 25 · DEF 10 · SPD 16 · HP 68</div>
+        <div class="body"><b>Jet Burst</b> (basic) · <b>Ink Screen</b> pw64 @Lv3 — ink curtain x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Torrent</b> (×1.5, Lv20) — Pressure Jet x1.8 <span class="arrow">▸</span> <b>Leviath</b> (×2.0, Lv50) — Deep Surge x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/chitbug.png" alt="ChitBug art">
+        <h4>ChitBug <span class="pill">Normal–Epic</span></h4>
+        <div class="sub">ATK 20 · DEF 14 · SPD 12 · HP 76</div>
+        <div class="body"><b>Mandible</b> (basic) · <b>Carapace</b> pw58 @Lv3 — hardens carapace x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Scarab</b> (×1.5, Lv20) — Swarm Call x1.8 <span class="arrow">▸</span> <b>Titan</b> (×2.0, Lv50) — Hive Mind x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/echowing.png" alt="EchoWing art">
+        <h4>EchoWing <span class="pill">Normal–Legendary</span></h4>
+        <div class="sub">ATK 23 · DEF 9 · SPD 17 · HP 64</div>
+        <div class="body"><b>Sonic Ping</b> (basic) · <b>Night Dive</b> pw60 @Lv3 — night dive x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Shriek</b> (×1.5, Lv20) — Echo Storm x1.8 <span class="arrow">▸</span> <b>Specter</b> (×2.0, Lv50) — Soul Echo x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/dustmoth.png" alt="DustMoth art">
+        <h4>DustMoth <span class="pill cyan">Rare–Legendary</span></h4>
+        <div class="sub">ATK 18 · DEF 11 · SPD 14 · HP 72</div>
+        <div class="body"><b>Scale Dust</b> (basic) · <b>Lull Powder</b> pw56 @Lv3 — sleep powder x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Silk</b> (×1.5, Lv20) — Silk Bind x1.8 <span class="arrow">▸</span> <b>Lumen</b> (×2.0, Lv50) — Moon Flare x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/finbyte.png" alt="FinByte art">
+        <h4>FinByte <span class="pill">Normal–Epic</span></h4>
+        <div class="sub">ATK 20 · DEF 12 · SPD 14 · HP 70</div>
+        <div class="body"><b>Stream Cut</b> (basic) · <b>Flow State</b> pw58 @Lv3 — flow state x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Current</b> (×1.5, Lv20) — Riptide x1.8 <span class="arrow">▸</span> <b>Tsunami</b> (×2.0, Lv50) — Flood Gate x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/glitchimp.png" alt="GlitchImp art">
+        <h4>GlitchImp <span class="pill" style="color:#ff5470;border-color:rgba(255,84,112,.4)">Rare–Mythic</span></h4>
+        <div class="sub">ATK 26 · DEF 11 · SPD 15 · HP 70</div>
+        <div class="body"><b>Hex Poke</b> (basic) · <b>Fault Line</b> pw66 @Lv3 — system fault line x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Trickster</b> (×1.5, Lv20) — Logic Bomb x1.8 <span class="arrow">▸</span> <b>Archon</b> (×2.0, Lv50) — Kernel Rift x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/spikeling.png" alt="Spikeling art">
+        <h4>Spikeling <span class="pill">Normal–Epic</span></h4>
+        <div class="sub">ATK 22 · DEF 13 · SPD 10 · HP 78</div>
+        <div class="body"><b>Barb Lash</b> (basic) · <b>Quill Wall</b> pw60 @Lv3 — quill wall x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Ridge</b> (×1.5, Lv20) — Spine Storm x1.8 <span class="arrow">▸</span> <b>Draco</b> (×2.0, Lv50) — Thorn Crown x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/orbling.png" alt="Orbling art">
+        <h4>Orbling <span class="pill">Normal–Epic</span></h4>
+        <div class="sub">ATK 17 · DEF 12 · SPD 12 · HP 80</div>
+        <div class="body"><b>Orb Toss</b> (basic) · <b>Cluster Sync</b> pw54 @Lv3 — cluster sync x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Cluster</b> (×1.5, Lv20) — Node Link x1.8 <span class="arrow">▸</span> <b>Nexus</b> (×2.0, Lv50) — Mesh Pulse x2</div>
+      </div>
+
+      <div class="card">
+        <img class="art" src="assets/species/haunbit.png" alt="HaunBit art">
+        <h4>HaunBit <span class="pill" style="color:#ff5470;border-color:rgba(255,84,112,.4)">Epic–Mythic</span></h4>
+        <div class="sub">ATK 24 · DEF 10 · SPD 16 · HP 68</div>
+        <div class="body"><b>Cold Ping</b> (basic) · <b>Phase Slip</b> pw64 @Lv3 — phase slip x1.5</div>
+        <div class="evo-chain">Base <span class="arrow">▸</span> <b>Revenant</b> (×1.5, Lv20) — Dread Wave x1.8 <span class="arrow">▸</span> <b>Wraith</b> (×2.0, Lv50) — Null Void x2</div>
+      </div>
+
+    </div>
+    <div class="tip gold"><b>Art note:</b> artwork shown is each species' <b>True Form</b> (stage 1, Red-attribute variant) — every species also has a per-attribute base look and a further Evolved Form (stage 2) skin per mutation branch. See <a href="systems.html#evolution">Gear &amp; Skills → Evolution</a> for how art changes across stages.</div>
+  </section>
+
+  <div class="section-nav">
+    <a href="bestiary.html">Next: AntiviruZ Bestiary →</a>
+    <a href="index.html">↩ Back to cover</a>
+  </div>
+
+  <footer class="pagefoot">
+    <span>MalwareZ Codex — sourced from the <code>Viruz</code> game repository.</span>
+    <span>Chapter 1 of 5</span>
+  </footer>
+</div>
+
+</body>
+</html>
